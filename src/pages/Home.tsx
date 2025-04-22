@@ -1,29 +1,31 @@
-import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+import { FileUpload } from '../components/FileUpload'
+import { LogoutButton } from '../components/LogoutButton'
+import { Message } from '../components/Message'
 
 export default function Home() {
-  const navigate = useNavigate()
+  const [uploadMessage, setUploadMessage] = useState('')
 
-  const handleLogout = async () => {
-    try {
-      await axios.post('http://vidcrop.com/auth/logout', null)
-      navigate('/login')
-    } catch (err) {
-      console.error('Logout failed:', err)
-    }
+  const handleUploadSuccess = () => {
+    setUploadMessage('✅ Upload successful!')
+  }
+
+  const handleUploadError = (message: string) => {
+    setUploadMessage(message)
   }
 
   return (
-    <div className="p-4 space-y-4">
-      <h1 className="text-2xl font-bold">Home - Protected</h1>
-      <p>Welcome! You are logged in.</p>
+    <div className="flex items-center justify-center min-h-screen bg-gray-50">
+      <div className="w-full max-w-md p-6 bg-white rounded-lg shadow space-y-6">
+        <h1 className="text-2xl font-bold text-center">Dashboard</h1>
+        <p className="text-center text-gray-600">Welcome! You are logged in.</p>
 
-      <button
-        onClick={handleLogout}
-        className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
-      >
-        Logout
-      </button>
+        <FileUpload onSuccess={handleUploadSuccess} onError={handleUploadError} />
+        
+        {uploadMessage && <Message message={uploadMessage} type={uploadMessage.includes('success') ? 'success' : 'error'} />}
+
+        <LogoutButton />
+      </div>
     </div>
   )
 }
