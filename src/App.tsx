@@ -1,7 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import ProtectedRoute from './components/ProtectedRoute'
 import Home from './pages/Home'
 import Login from './pages/Login'
-import ProtectedRoute from './components/ProtectedRoute'
+import Download from './pages/Download'
+import NotFound from './pages/NotFound'
 
 function App() {
   return (
@@ -16,6 +18,15 @@ function App() {
             </ProtectedRoute>
           }
         />
+        <Route
+          path="/download/:videoId"
+          element={
+            <ProtectedRoute>
+              <Download />
+            </ProtectedRoute>
+          }
+        />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   )
