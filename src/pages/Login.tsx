@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { useState } from 'react'
 
 export default function Login() {
@@ -64,6 +64,13 @@ export default function Login() {
           {message && (
             <p className="text-red-600 text-sm text-center mt-2">{message}</p>
           )}
+
+          <p className="text-sm text-center text-gray-600 mt-4">
+            Don't have an account?{' '}
+            <Link to="/register" className="text-blue-600 hover:underline">
+              Register
+            </Link>
+          </p>
         </form>
       </div>
     </div>
