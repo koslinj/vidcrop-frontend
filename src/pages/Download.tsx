@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import axios from 'axios'
 
 function Download() {
@@ -46,6 +46,9 @@ function Download() {
       <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-gray-100">
         <h1 className="text-3xl font-bold text-red-600 mb-4">Video Not Found</h1>
         <p className="text-gray-600 mb-4">The requested video does not exist or cannot be loaded.</p>
+        <Link to="/" className="text-blue-600 hover:underline">
+          Go back to Dashboard
+        </Link>
       </div>
     )
   }
@@ -71,6 +74,9 @@ function Download() {
           Download Video
         </button>
       </div>
+      <Link to="/" className="text-blue-600 hover:underline mt-6">
+        Go back to Dashboard
+      </Link>
     </div>
   )
 }
