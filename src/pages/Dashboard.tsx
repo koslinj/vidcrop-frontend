@@ -4,13 +4,10 @@ import { Link } from 'react-router-dom'
 export default function Dashboard() {
 
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex flex-col items-center">
       <div className="w-full max-w-md p-6 bg-white rounded-lg shadow space-y-4">
         <h1 className="text-2xl font-bold text-center">Dashboard</h1>
         <p className="text-center text-gray-600">Welcome! You are logged in.</p>
-
-        <h2 className="text-lg font-semibold">Recently Uploaded:</h2>
-        <FilesList />
 
         <div className="flex flex-col gap-2 mt-4">
           <Link
@@ -26,6 +23,11 @@ export default function Dashboard() {
             View All Videos
           </Link>
         </div>
+      </div>
+
+      <div className="w-full p-6 bg-white rounded-lg shadow space-y-4">
+        <h2 className="text-lg font-semibold">Recently Cropped:</h2>
+        <FilesList />
       </div>
     </div>
   )
