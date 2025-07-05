@@ -54,7 +54,7 @@ function Download() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-gray-100">
+    <div className="flex flex-col items-center justify-center">
       <h1 className="text-2xl font-bold mb-6 text-center">Watch and Download Your Video</h1>
 
       <div className="w-full max-w-md bg-white rounded-lg shadow-md p-4">
