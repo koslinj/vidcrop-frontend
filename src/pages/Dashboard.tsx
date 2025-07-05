@@ -1,4 +1,3 @@
-import { LogoutButton } from '../components/LogoutButton'
 import { FilesList } from '../components/FilesList'
 import { Link } from 'react-router-dom'
 
@@ -27,8 +26,6 @@ export default function Dashboard() {
             View All Videos
           </Link>
         </div>
-
-        <LogoutButton />
       </div>
     </div>
   )
