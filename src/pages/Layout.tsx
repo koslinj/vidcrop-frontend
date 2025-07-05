@@ -10,8 +10,8 @@ export function Layout() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-100">
-      <nav className="bg-white shadow mb-4">
+    <div className="min-h-screen bg-gray-200">
+      <nav className="bg-white shadow">
         <div className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
           <h1 className="text-xl font-bold text-blue-600">🎬 VidCrop</h1>
           <div className="flex gap-4">
@@ -19,11 +19,10 @@ export function Layout() {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`text-sm font-medium ${
-                  location.pathname === item.path
-                    ? 'text-blue-600 underline'
-                    : 'text-gray-600 hover:text-blue-500'
-                }`}
+                className={`text-sm font-medium ${location.pathname === item.path
+                  ? 'text-blue-600 underline'
+                  : 'text-gray-600 hover:text-blue-500'
+                  }`}
               >
                 {item.label}
               </Link>
@@ -32,7 +31,7 @@ export function Layout() {
         </div>
       </nav>
 
-      <main className="max-w-5xl mx-auto px-4">
+      <main className="flex-1 w-full p-4">
         <Outlet />
       </main>
     </div>
