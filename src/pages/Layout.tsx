@@ -14,7 +14,7 @@ export function Layout() {
   return (
     <div className="flex flex-col min-h-screen bg-gray-200">
       <nav className="bg-white shadow">
-        <div className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
           <h1 className="text-xl font-bold text-blue-600">🎬 VidCrop</h1>
           <div className="flex gap-4 items-center">
             {navItems.map((item) => (

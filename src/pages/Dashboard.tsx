@@ -25,7 +25,7 @@ export default function Dashboard() {
         </div>
       </div>
 
-      <div className="w-full p-6 bg-white rounded-lg shadow space-y-4 mt-4">
+      <div className="w-full max-w-6xl p-6 bg-white rounded-lg shadow space-y-4 mt-4">
         <h2 className="text-xl font-semibold">Recently Cropped:</h2>
         <FilesList />
       </div>
