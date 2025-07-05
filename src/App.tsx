@@ -1,10 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import ProtectedRoute from './components/ProtectedRoute'
-import Home from './pages/Home'
+import Dashboard from './pages/Dashboard'
 import Login from './pages/Login'
 import Download from './pages/Download'
 import NotFound from './pages/NotFound'
 import Register from './pages/Register'
+import { Upload } from './pages/Upload'
+import { Library } from './pages/Library'
+import { Layout } from './pages/Layout'
 
 function App() {
   return (
@@ -13,21 +16,18 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route
-          path="/"
           element={
             <ProtectedRoute>
-              <Home />
+              <Layout />
             </ProtectedRoute>
           }
-        />
-        <Route
-          path="/download/:videoId"
-          element={
-            <ProtectedRoute>
-              <Download />
-            </ProtectedRoute>
-          }
-        />
+        >
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/upload" element={<Upload />} />
+          <Route path="/library" element={<Library />} />
+          <Route path="/download/:videoId" element={<Download />} />
+        </Route>
+
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
